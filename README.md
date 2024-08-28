@@ -10,14 +10,16 @@
 python -m venv venv
 venv\Scripts\activate.bat
 ```
-><info>Для корректной работы программы <important>необходимо</important> использовать Python <b>версии 3.10-3.11</b></info>
+> [!IMPORTANT]
+>Для корректной работы программы <important>необходимо</important> использовать Python <b>версии 3.10-3.11</b>
 2. Обновить пакетный менеджер pip (если это необходимо) и установить зависимости
 ```
 python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 3. Установить и запустить MongoDB ([см. документацию](https://www.mongodb.com/docs/))
-> <info>В качестве демонстрации используется подключение к БД без логина и пароля, со стандартным портом и адресом: ```mongodb://localhost:27017/``` </info>
+> [!NOTE]
+> В качестве демонстрации используется подключение к БД без логина и пароля, со стандартным портом и адресом: ```mongodb://localhost:27017/```
 4. Сконфигурировать файл .env, для этого создать его и вставить следующие переменные окружения:
 ```dotenv
 MONGODB_HOST=localhost
@@ -38,14 +40,17 @@ MONGODB_RESULTS_COLLECTION=ScanningResults
 MONGODB_USERS_COLLECTION=Users
 MONGODB_GROUPS_COLLECTION=Groups
 ```
-> <info>Рекомендуется также сконфигурировать файл ```.dockerignore``` для более оптимизированного запуска контейнеров: [см. документацию](https://docs.docker.com/build/concepts/context/)</info>
+> [!TIP]
+> Рекомендуется также сконфигурировать файл ```.dockerignore``` для более оптимизированного запуска контейнеров: [см. документацию](https://docs.docker.com/build/concepts/context/)
 3. Создать сборку контейнеров с помощью docker compose и запустить ее
 ```docker
 docker compose up -d --build
 ```
-> <info>По умолчанию файл docker compose настроен на запуск контейнера, вывод команды ```--help``` и остановку контейнера, чтобы настроить его на постоянную работу необходимо раскомментировать строку 
-```#    command: tail -f /dev/null``` и закомментировать строку ```    command: python geogramint.py --help```</info>
-> ><important>База данных внутри docker-контейнера также работает без логина и пароля</important>
+> [!NOTE]
+>По умолчанию файл docker compose настроен на запуск контейнера, вывод команды ```--help``` и остановку контейнера, чтобы настроить его на постоянную работу необходимо раскомментировать строку 
+```#    command: tail -f /dev/null``` и закомментировать строку ```    command: python geogramint.py --help```
+> >[!IMPORTANT]
+> >База данных внутри docker-контейнера также работает без логина и пароля
 
 ### Базовые команды
 1. Для начала работы сконфигурируйте файл ```config.ini``` командой:
@@ -60,10 +65,13 @@ python geogramint.py set-config <api_id> <api_hash> <phone_number>```
 ```python geogramint.py start-scan <lat> <lon>```
 <br><br>
 ```Где lat и lon - широта и долгота соответственно```
-> <info>Если программа выдает одни и те же адреса при разных показателях lat и lon подождите 5-10 минут и попробуйте повторить запрос</info>
+> [!IMPORTANT]
+> Если программа выдает одни и те же адреса при разных показателях lat и lon подождите 5-10 минут и попробуйте повторить запрос
 
-> <info>При первом запуске команды вас попросят авторизоваться в телеграм, выполните шаги по инструкции, которая отобразится в консоли</info>
+> [!NOTE]
+> При первом запуске команды вас попросят авторизоваться в телеграм, выполните шаги по инструкции, которая отобразится в консоли
 
-> <info>Данные о результатах запросов будут автоматически записаны в БД <important>GeogramintDB</important> с коллекциями <important>Groups, Users</important> и <important>ScanningResults</important>, где Groups и Users - группы и пользователи, ScanningResults - таблица-связка с временем отправки запроса и найденными группами и пользователями </info>
+> [!NOTE]
+> Данные о результатах запросов будут автоматически записаны в БД <important>GeogramintDB</important> с коллекциями <important>Groups, Users</important> и <important>ScanningResults</important>, где Groups и Users - группы и пользователи, ScanningResults - таблица-связка с временем отправки запроса и найденными группами и пользователями
 
 3. Больше информации о CLI в официальной [Wiki](https://github.com/Alb-310/Geogramint/wiki/Demonstration:-CLI).

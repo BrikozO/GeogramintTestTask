@@ -71,6 +71,6 @@ python geogramint.py set-config <api_id> <api_hash> <phone_number>```
 > При первом запуске команды вас попросят авторизоваться в телеграм, выполните шаги по инструкции, которая отобразится в консоли
 
 > [!NOTE]
-> Данные о результатах запросов будут автоматически записаны в БД <important>GeogramintDB</important> с коллекциями <important>Groups, Users</important> и <important>ScanningResults</important>, где Groups и Users - группы и пользователи, ScanningResults - таблица-связка с временем отправки запроса и найденными группами и пользователями
+> Данные о результатах запросов будут автоматически записаны в БД <important>GeogramintDB</important> с коллекциями <important>Groups, Users</important> и <important>ScanningResults</important>, где Groups и Users - группы и пользователи, ScanningResults - коллекция-связка с временем отправки запроса и найденными группами и пользователями
 
 3. Больше информации о CLI в официальной [Wiki](https://github.com/Alb-310/Geogramint/wiki/Demonstration:-CLI).

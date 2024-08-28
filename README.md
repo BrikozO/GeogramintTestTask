@@ -1,7 +1,7 @@
 # Тестовое задание на позицию Junior Developer. Якушев Олег
 ## Предварительная настройка и установка
 
-1. Клонировать проект из репозитория на GitHub: ```[git clone](https://github.com/BrikozO/GeogramintTestTask.git)```
+1. Клонировать проект из репозитория на GitHub: ```https://github.com/BrikozO/GeogramintTestTask.git```
 >[!NOTE]
 > Все команды и действия во время настройки выполняются в рабочей директории с клонированным репозиторием
 ### Запуск <u>без Docker</u>:
